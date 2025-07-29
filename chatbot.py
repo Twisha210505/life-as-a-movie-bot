@@ -1,9 +1,9 @@
+import os
 from openai import OpenAI
 
-client = OpenAI(
-    api_key="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", 
-    base_url="https://api.groq.com/openai/v1"
-)
+api_key = os.getenv("GROQ_API_KEY")
+client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
+
 
 print("🎬 Welcome to Life-as-a-Movie Bot!")
 print("Describe your day or an incident, and I'll turn it into a movie scene.")
